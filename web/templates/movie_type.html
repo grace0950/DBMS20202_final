@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+<div class = 'about'>
+    <table class="table table-bordered">
+    <tr>
+        <th>movie_name</th>
+        <th>movie_type</th>
+    </tr>
+        {% for i in u %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+            </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}

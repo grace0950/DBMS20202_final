@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+<head>
+	<style type="text/css">
+body{
+	font-family:  Georgia, serif;
+}	
+		.container{
+			margin:0px 0px;
+			padding: 0px;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		.about{
+
+			/*position: relative;*/
+			min-height:100%;
+			width: 100vw;
+			/*padding: 40px 0;*/
+			padding-bottom:100px;
+		}
+		.about.container{
+			margin: 0px,0px;
+		}
+		.about .wrap{
+			display: flex;
+		}
+		.about.item.container{
+			margin: 0px,0px;
+		}
+		.about .item{
+			/*margin: 0 10px;*/
+			/*width: 350px;*/
+			width: 20vw;
+			/*text-align: center;*/
+		}
+		.about .item h3{
+			color: #000;
+			transition: 0.5s;
+		}
+		.about .item p{
+			color: #000;
+			transition: 0.5s;
+		}
+		.about .item:hover h3{
+			color: #fa0;
+		}
+		.about .item:hover p{
+			color: #FFF;
+		}
+		.about .item img{
+			/* border-radius: 50%; */
+			width: 20vw;
+		}
+		input[type="image"]{
+			/*padding:15px 10px; */
+			width: 100%;
+			cursor:pointer;
+			/* -webkit-border-radius: 5px; */
+		}
+		.about >h2{
+			width: 100%;
+			font-size: 60px;
+			font-weight: 600;
+			line-height: 1;
+			letter-spacing: -1px;
+			/*margin: auto;*/
+			text-align: center;
+			padding: 20px 200px;
+		}
+		.about >p{
+			width: 800px;
+			margin: auto;
+			padding: 0 0 40px;
+			text-align: center;
+		}
+		.about >h3{
+			font-weight: 500;
+		}
+		.grid
+		{
+			position: relative;
+			margin: 0 auto;
+			/*padding: 1em 0 4em;*/
+			/*max-width: 1000px;
+			list-style: none;
+			text-align: center;*/
+		}
+		.grid figure
+		{
+			position: relative;
+			float: left;
+			overflow: hidden;
+			margin: 10px 1%;
+		/*	min-width: 1000px;
+			max-width: 1000px;
+			max-height: 1000px;
+			width: 48%;*/
+			background: #3085a3;
+			text-align: center;
+			cursor: pointer;
+
+		}
+		.grid figure img
+		{
+			position: relative;
+			display: block;
+			/*min-height: 100%;
+		max-width: 100%;*/
+			opacity: 0.8;
+
+		}
+		.grid figure figcaption
+		{
+			padding: 2em;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.25em;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+		.grid figure figcaption::before,
+		.grid figure figcaption::after
+		{
+			pointer-events:none;
+		}
+		.grid figure figcaption,
+		.grid figure figcaption > a
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.grid figure figcaption > a
+		{
+			z-index: 1000;
+			text-indent: 200%;
+			white-space: nowrap;
+			font-size: 0;
+			opacity: 0;
+		}
+		.grid figure h2
+		{
+			word-spacing: -0.15em;
+			font-weight: 300;
+		}
+		.grid figure h2 span
+		{
+			font-weight : 800;
+		}
+		.grid figure h2,
+		.grid figure p
+		{
+			margin : 0;
+		}
+		.grid figure p
+		{
+			letter-spacing: 1px;
+			font-size: 68.5%;
+		}
+		figure.effect-zoe figcaption
+		{
+			top: auto;
+			bottom: 0;
+			padding: 1em;
+			height: 3.75em;
+			background: #fff;
+			color: #3c4a50;
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: translate3d(0,100%,0);
+			transform: translate3d(0,100%,0);
+		}
+		figure.effect-zoe h2
+		{
+			float : left;
+		}
+		figure.effect-zoe p.icon-links a
+		{
+			float : right;
+			color: #3c4a50;
+			font-size: 1.4em;
+		}
+		figure.effect-zoe:hover p.icon-links a:hover,
+		figure.effect-zoe:hover p.icon-links a:focus 
+		{
+			color: #252d31;
+		}
+		figure.effect-zoe p.description
+		{
+			position: absolute;
+			bottom: 8em;
+			padding: 2em;
+			color: #fff;
+			text-transform: none;
+			font-size: 90%;
+			opacity: 0;
+			-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+			-webkit-transition: opacity 0.35s;
+			transition: opacity 0.35s;
+			-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+		}
+		figure.effect-zoe h2,
+		figure.effect-zoe p.icon-links a 
+		{
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: translate3d(0,200%,0);
+			transform: translate3d(0,200%,0);
+		}
+		figure.effect-zoe p.icon-links a span::before
+		{
+			display: inline-block;
+			padding: 8px 10px;
+			font-family: 'feathericons';
+			speak: none;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}.icon-eye::before
+		{
+			content: '\e000';
+		}
+		.icon-paper-clip::before
+		{
+			content: '\e001';
+		}
+		.icon-heart::before
+		{
+			content: '\e024';
+		}
+		figure.effect-zoe h2
+		{
+			display: inline-block;
+		}
+		figure.effect-zoe:hover p.description
+		{
+			opacity:1;
+		}
+		figure.effect-zoe:hover figcaption,
+		figure.effect-zoe:hover h2,
+		figure.effect-zoe:hover p.icon-links a {
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+		figure.effect-zoe:hover h2 {
+			-webkit-transition-delay: 0.05s;
+			transition-delay: 0.05s;
+		}
+		figure.effect-zoe:hover p.icon-links a:nth-child(3) {
+			-webkit-transition-delay: 0.1s;
+			transition-delay: 0.1s;
+		}
+		figure.effect-zoe:hover p.icon-links a:nth-child(2) {
+			-webkit-transition-delay: 0.15s;
+			transition-delay: 0.15s;
+		}
+		figure.effect-zoe:hover p.icon-links a:first-child {
+			-webkit-transition-delay: 0.2s;
+			transition-delay: 0.2s;
+		}
+	</style>
+</head>
+
+
+<!-- <input type="image" src=""  alt="send" name="Test" id="Test"
+	onclick="send();" /> -->
+	<body>
+		<main>
+		<div class="about">
+			<h2>Welcome</h2>
+			<p>How's your day?
+			</p>
+			<div class="wrap">
+				<div class="item">
+					<div class = "grid">
+						<figure class = "effect-zoe">
+					<a href="{{url_for('index_boring')}}">
+						<input type="image"  style = 'background-image' src="https://i.picsum.photos/id/124/400/600.jpg?hmac=-dypZAYRKCon_YkS3Wpqn6yjyr5hXJLb6vNojP67qiE"  alt="send" name="Test" id="Test" onclick="send();" /> 
+						<figcaption>
+							<h2>Bored</h2>
+						</figure>
+					</div>
+				</div>
+					</a>
+					<div class="item">
+						<div class = "grid">
+							<figure class = "effect-zoe">
+						<a href="{{url_for('index_angry')}}">
+							<input type="image"src="https://i.picsum.photos/id/1019/400/600.jpg?hmac=CCmq_lakGjWi8X6BOTVvw0zwyKOYsmxVLQpXvdPYWnQ"  alt="send" name="Test" id="Test" onclick="send();" /> 
+							<figcaption>
+								<h2>Angry</h2>
+							</figure>
+						</div>
+						</div>
+						</a>
+						<div class="item">
+							<div class = "grid">
+								<figure class = "effect-zoe">
+							<a href="{{url_for('index_excited')}}">
+								<input type="image" src="https://i.picsum.photos/id/1077/400/600.jpg?hmac=BLr8Bj2cFU_XqDsQ9ve0H0S8WP7DlAA-8w204hhcWqQ"  alt="send" name="Test" id="Test" onclick="send();" /> 
+							<figcaption>
+								<h2>Excited</h2>
+								</figure>
+							</div>
+							</div>
+							</a>
+							<div class="item">
+								<div class = "grid">
+									<figure class = "effect-zoe">
+								<a href="{{url_for('index_happy')}}">
+									<input type="image" src="https://i.picsum.photos/id/1003/400/600.jpg?hmac=GpsVsDNGCq3w7sURelNeXjnD9f28dhHqIl0siJLGioc"  alt="send" name="Test" id="Test" onclick="send();" /> 
+									<figcaption>
+										<h2>Happy</h2>
+									</figure>
+								</div>
+								</div>
+								</a>
+								<div class="item">
+									<div class = "grid">
+										<figure class = "effect-zoe">
+									<a href="{{url_for('index_sad')}}">
+										<input type="image" src="https://i.picsum.photos/id/1062/400/600.jpg?hmac=WSoYbrz87fcwqgQW6Sg7GFUEvKoDW8U1tx9QKYY2g1I"  alt="send" name="Test" id="Test" onclick="send();" /> 
+										<figcaption>
+											<h2>Gloomy</h2>
+										</figure>
+									</div>
+									</div>
+									</a>
+			</div>
+		</div>
+		</main>
+		<footer class="footer">
+			&copy; copyright by Unknown
+		</footer>
+	</body>
+
+	{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+<div class="row">
+	<div class="col-xs-6 col-sm-4"></div>
+	<div class="col-xs-6 col-sm-4"></div>
+	<div class="clearfix visible-xs-block"></div>
+	<div class="col-xs-6 col-sm-4"></div>
+</div>
+<!--<div class = 'row'>-->
+	<div class = 'container'>
+		<h2>Welcome</h2>
+	</div>
+	{% for i in range(10) %}
+	<div class = 'col-md-6'>
+			<input type="image" src={{u}}  alt="send" name="Test" id="Test" onclick="send();" /> 
+			<p >
+				哭啊!{{i}}
+			</p>
+	</div>
+	{% endfor %}
+	<!--</div>-->
+
+{% endblock %}
+

@@ -22,21 +22,23 @@ def gethref(dom):
         x = response.text
         SS = BeautifulSoup(x, features="html.parser")
         info = SS.find('div', class_='movie-info-box')
+        cell = SS.find('div', class_='cell small-3 medium-2 large-2 movie-pic-box')
+        img = cell.find('img')
         #print(info)
         if info != []:
-            getinfo(info)
+            getinfo(info, img)
         else:
             break
 
 
-def getinfo(info):
+def getinfo(info, img):
     print(f"title = {info.find('h2').text}")
     print(f"EN_title = {info.find('h6').text}")
     attributes = info.find_all('p')
+    print(f"{attributes[2].text}")
+    print(f"url = {img['src']}")
     print(f"intro = {attributes[0].text}")
     print(f"{attributes[1].text}")
-    print(f"{attributes[2].text}")
-    print("-------------------------------------------------------------------------\n")
 
 
 def main():

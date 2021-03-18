@@ -1,9 +1,9 @@
-actor -- data crawled not processed
-acts -- data crawled not processed
+actor -- all done can auto
+acts -- all done can auto
 book -- PROJECT INPUT
 customer -- PROJECT INPUT
 display -- all done can auto
-movie -- all done can auto 
+movie -- all done can auto
 theater -- data crawled not processed
 type -- all done can auto
 

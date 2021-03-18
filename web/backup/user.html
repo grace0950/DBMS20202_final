@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}User{% endblock %}
+{% block content %}
+<head>
+	<style type="text/css">
+		.container{
+            font-family: Georgia, serif;
+            font-size: 15px;
+		}
+		.container >h1{
+			padding: 10px 0;
+            font-size: 80px;
+            font-family: Georgia, serif;
+            font-weight: 400;
+		}
+	</style>
+</head>
+
+<body>
+ <div class="container">
+  <h1>Personal Info.</h1>
+  
+ 
+ {% for i in u %}
+ <div class = 'col-md-6'>
+ <h1>
+  {{i[0]}}
+ </h1>
+    <p >
+        {{i[1]}}, {{i[2]}}, {{i[3]}}, {{i[4]}}, {{i[5]}}, {{i[6]}}, {{i[7]}}
+    </p>
+ </div>
+{% endfor %}
+
+ <p>{{ wtf.quick_form(form) }}</p>
+ </div>
+</body>
+<!-- <script>
+	let type_select = document.getElementById('m_type');
+</script> -->
+{% endblock content%}
+<!-- 
+輸入名字跟ID
+
+那個身分證字號有訂的電影票
+輸入流水編號刪掉 -->

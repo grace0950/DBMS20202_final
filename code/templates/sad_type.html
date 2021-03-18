@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}Sad{% endblock %}
+
+{% block page_content %}
+    <head>
+        <style type="text/css">
+        .about{
+            padding: 100px 0;
+            font-family:  Georgia, serif;
+        }
+        .about .flex {
+            display: flex;
+            height: 300px;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        .about .item{
+            display: flex;
+            flex-wrap: wrap;
+            /*align-items: center;*/
+            justify-content: center;
+            position: relative;
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 75px;
+            /*font-family: 'Montserrat', sans-serif;*/
+            font-size: 10px;
+            font-weight: lighter;
+            letter-spacing: 2px;
+            transition: 1s box-shadow;
+        }
+
+        .about .item:hover {
+            box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+        }
+        .about .item:hover:before, .about .item:hover:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;            
+            background: #FDA8CF;
+            border-radius: 75px;
+            z-index: -1;
+            animation: 1s clockwise infinite;
+        }
+
+        .about .item:hover:after {
+            background: #F3CE5E;
+            animation: 2s counterclockwise infinite;
+        }
+
+        @keyframes clockwise {
+          0% {
+            top: -5px;
+            left: 0;
+          }
+          12% {
+            top: -2px;
+            left: 2px;
+          }
+          25% {
+            top: 0;
+            left: 5px;    
+          }
+          37% {
+            top: 2px;
+            left: 2px;
+          }
+          50% {
+            top: 5px;
+            left: 0;    
+          }
+          62% {
+            top: 2px;
+            left: -2px;
+          }
+          75% {
+            top: 0;
+            left: -5px;
+          }
+          87% {
+            top: -2px;
+            left: -2px;
+          }
+          100% {
+            top: -5px;
+            left: 0;    
+          }
+        }
+
+        @keyframes counterclockwise {
+        0% {
+        top: -5px;
+        right: 0;
+        }
+        12% {
+        top: -2px;
+        right: 2px;
+        }
+        25% {
+        top: 0;
+        right: 5px;    
+        }
+        37% {
+        top: 2px;
+        right: 2px;
+        }
+        50% {
+        top: 5px;
+        right: 0;    
+        }
+        62% {
+        top: 2px;
+        right: -2px;
+        }
+        75% {
+        top: 0;
+        right: -5px;
+        }
+        87% {
+        top: -2px;
+        right: -2px;
+        }
+        100% {
+        top: -5px;
+        right: 0;    
+        }
+        }
+
+        .about .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+            flex: 0%;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .about .wrap{
+            display: flex;
+        }
+       /* .about .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+        }*/
+        .about .item h3{
+            color: #000;
+            transition: 0.5s;
+            text-align: center;
+        }
+        .about .item p{
+            color: #000;
+            transition: 0.5s;
+        }
+        input[type="image"]{
+            padding:25px 10px 0 10px; 
+            width: 130px;
+            cursor:pointer;
+            /* -webkit-border-radius: 5px; */
+        }
+        .about >h2{
+            width: 100%;
+            font-size: 200px;
+            font-weight: 500;
+            margin: auto;
+            /*text-align: center;*/
+            padding: 20px 50px;
+        }
+        .about >h3{
+            letter-spacing: -1;
+            font-weight: 100;
+            text-align: center;
+        }
+        .about img{
+            width: 130px;
+        }
+        </style>
+    </head>
+
+
+    <!-- <input type="image" src=""  alt="send" name="Test" id="Test"
+onclick="send();" /> -->
+
+    <div class="about">
+        <!-- <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/5_large.png?v=1571606116" style="display:block; margin:auto;" /> -->
+        <h2>Gloomy.</h2>
+        <div class="flex">
+             <div class="item">
+                <a href="{{url_for('getmovielist',past_val='紀錄片')}}">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Documentary.png?raw=true"  alt="send" name="Test" id="Test" /> 
+                 <h3>Documentary</h3>
+
+             </div>
+             <div class="item">
+                <a href="{{url_for('getmovielist',past_val='劇情')}}">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Drama.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                 <h3>Drama</h3>
+             </div>
+             <div class="item">
+                <a href="{{url_for('getmovielist',past_val='動作')}}">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Action.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Action</h3>
+            </div>
+            <div class="item">
+                <a href="{{url_for('getmovielist',past_val='卡通動畫')}}">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Animation.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Animation</h3>
+            </div>
+            <div class="item">
+                <a href="{{url_for('getmovielist',past_val='喜劇')}}">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Comedy.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Comedy</h3>
+            </div>
+         </div>
+    </div>
+
+    
+{% endblock %}

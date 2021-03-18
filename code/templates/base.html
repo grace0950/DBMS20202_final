@@ -1,0 +1,157 @@
+{% extends "bootstrap/base.html"  %}
+{% block title %}Flask{% endblock %}
+{% block navbar %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link href="reset.css">
+    <style>
+        body{
+            min-height:100vh;
+            margin:0;
+            padding-bottom:58px;
+            position:relative;
+            /*background-color: #000000;*/
+            font-family: Georgia;
+        }
+        main{
+            /*background-color: #000000;*/
+            /*margin: 10px;*/
+            /*padding: 20px 20px;*/
+        }
+		/*.about{
+			position: relative;
+			min-height:100%;
+			padding: 40px 0;
+            padding-bottom:100px;
+        }*/
+        .header{
+            display: flex;
+            padding: 6px 10px;
+            background-color: #000;
+        }
+        .header img{
+            margin-top: 13px;
+            width: 20px;
+        }
+        .header nav{
+            text-align: right;
+            width: 100%;
+            font-size: 0;
+        }
+        .header nav a{
+            font-family: Georgia; /*sans-serif*/
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding:3px 10px;
+        }
+        .header nav a:hover{
+            color: #3DA35D;
+            /*background-color: #fa0;*/
+        }
+        .header nav {
+            font-family: 'Georgia';
+            text-transform: uppercase;
+            /*text-align: center;*/
+            /*font-weight: 600;*/
+            letter-spacing: -1;
+        }
+        .header nav * {
+            box-sizing: border-box;
+            transition: all .35s ease;
+        }
+        .header nav li {
+            display: inline-block;
+            list-style: outside none none;
+            margin: .5em 1em;
+            paddin: 0;
+        }
+
+        .header nav a {
+            padding: .5em .8em;
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .header nav a::before,
+        .header nav a::after {
+            content: '';
+            height: 24px;
+            width: 30px;
+            position: absolute;
+            transition: all .35s ease;
+            opacity: 0;
+        }           
+        .header nav a::before {
+            content: '';
+            right: 0;
+            top: 0;
+            border-top: 3px solid #3E8914;
+            border-right: 3px solid #2E640F;
+            transform: translate(-100%, 50%);
+        }
+        .header nav a:after{
+              content: '';
+              left: 0;
+              bottom: 0;
+              border-bottom: 3px solid #2E640F;
+              border-left: 3px solid #3E8914;
+              transform: translate(100%, -50%)
+        }
+        .header nav a:hover:before,
+        .header nav a:hover:after{
+            transform: translate(0,0);
+            opacity: 1;
+        }
+        .content{
+            font-size: 32px;
+        }
+        .footer{
+            text-align: center;
+            background-color: #000;
+            color: #888;
+            padding: 20px; 
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+<script language="javascript">
+    function inputBox()
+    {
+        var str=prompt("Your Personal ID.","");
+        if(str){
+            x = 'http://127.0.0.1:5000/user/' + str;
+            location.href = x;
+        }
+        
+    }
+</script>
+<div class="header">
+    <nav>
+        <a href="/">Homepage</a>
+        <a href="#" onClick="inputBox()"id="button">User</a>
+        </nav> 
+<main>
+</main>
+    <footer class="footer">
+        &copy; copyright by Unknown
+     </footer>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% block page_content %}{% endblock %}
+</div>
+</body>
+{% endblock %}

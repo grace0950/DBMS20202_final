@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+<head>
+	<style>
+/*.container >p{
+  font-size: 50px;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+
+}*/
+.container {
+	font-family: sans-serif;
+	text-align: center;
+}
+		.container >h2 {
+			padding: 5px 0 20px 0;
+		}
+		.container img{
+			width: 400px;
+			margin: 20px 0 3px 80px;
+			border-radius:10px;
+			border:2px;
+		}
+		.container img .radius{
+			width: 500px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,1.00);
+		}
+		.col-md-6 >p{
+			margin: 0 0 50px 0px;
+			font-size: 25px;
+			font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+		}
+		a{
+			color: #111
+		}
+		.photo{
+			/*position: absolute;*/
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			/*display: block;*/
+		}
+		.photo img{
+			width: 380px;
+			margin: 20px 0 3px 80px;
+			height: 550px;
+			object-fit: cover;
+			box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
+
+			/*box-shadow: 10px 15px 25px 0 rgba(0,0,0,.6);*/
+			display: block;
+			transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+			margin-top: -10px;
+		}
+		.photo:hover img{
+			box-shadow: 10px 15px 25px 0 rgba(0,0,0,.6);
+			/*box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);*/
+		}
+		.photo .glow-wrap{
+			overflow: hidden;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			margin-top: -10px;
+		}
+
+		.photo .glow{
+			display: block;
+			position:absolute;
+			width: 40%;
+			height: 200%;
+			background: rgba(255,255,255,.2);
+			top: 0;
+			filter: blur(5px);
+			transform: rotate(45deg) translate(-450%, 0);
+			transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+		.photo:hover .glow{
+			transform: rotate(45deg) translate(450%, 0);
+			transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+		.photo:hover img,
+		.photo:hover .glow-wrap{
+			/*margin-top: 0;*/
+		}
+	</style>
+</head>
+
+<div class = 'col-ld-6'>
+	{% for i in U %}
+	<img src="{{i[0]}}" alt="">
+    <div class="glow-wrap">
+        <i class="glow"></i>
+    </div>
+	{% endfor %}
+</div>
+<div class = 'col-ld-6'>
+	<h1>{{T}}</h1>
+	<p>movie_info</p>
+	<input type="button" value="order" style="width:100px;height:50px">
+</div>
+
+
+
+
+{% endblock %}

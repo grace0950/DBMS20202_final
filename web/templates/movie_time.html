@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+
+<head>
+	<style>
+/*.container >p{
+  font-size: 50px;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+
+}*/
+.col-xs-1-8,
+.col-sm-1-8,
+.col-md-1-8,
+.col-lg-1-8 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+	.col-xs-1-8 {
+		width: 14.2857143%;
+		float: left;
+	}
+
+
+	@media (min-width: 768px) {
+		.col-sm-1-8 {
+			width: 12.5%;
+			float: left;
+		}
+	}
+	@media (min-width: 992px) {
+		.col-md-1-8 {
+			width: 12.5%;
+			float: left;
+		}
+	}
+	@media (min-width: 1200px) {
+		.col-lg-1-8 {
+			width: 12.5%;
+			float: left;
+		}
+	}
+	.container {
+		font-family: sans-serif;
+		text-align: center;
+	}
+	.container >h2 {
+		padding: 5px 0 20px 0;
+	}
+	.container img{
+		width: 400px;
+		margin: 40px 0 3px 0px;
+		border-radius:10px;
+		border:2px;
+	}
+	.container img .radius{
+		width: 500px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0,0,0,1.00);
+	}
+	.col-md-6 >p{
+		margin: 0 0 20px 0px;
+		font-size: 18px;
+		font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+	}
+	a{
+		color: #111
+	}
+
+	input{
+		border:0;
+		background-color: #272727;
+		color:#fff;
+		border-radius:10px;
+		cursor:pointer;
+	}
+
+	input:hover{
+		color:#272727;
+		background-color:#fff;
+		border:2px #272727 solid;
+	}
+
+	</style>
+</head>
+
+
+
+<div class = 'col-md-1-8'>
+	<h1>6/20</h1>
+	{% for i in d20 %}
+
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0620/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/21</h1>
+	{% for i in d21 %}
+	<p>
+	
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0621/{{i[0]}}"'>
+
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/22</h1>
+	{% for i in d22 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0622/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/23</h1>
+	{% for i in d23 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0623/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/24</h1>
+	{% for i in d24 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0624/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/25</h1>
+	{% for i in d25 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0625/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/26</h1>
+	{% for i in d26 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0626/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+<div class = 'col-md-1-8'>
+	<h1>6/27</h1>
+	{% for i in d27 %}
+	<p>
+		<input type="button" value="{{i[0]}}" style="width: 100px; height:30px" onclick='location.href="/index/movieinfo/{{N}}/{{T}}/0627/{{i[0]}}"'>
+	</p>
+	{% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,64 @@
+<!doctype html>
+<html manifest="lab4.manifest">
+	<head>
+		<title>Mobile Cookbook</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<body >
+
+		<section>
+
+			<form id="form1" name="form1" method="post">
+				<input type="button" name="button" onClick="inputBox()"id="button" value="Add Note" />
+				<ul id="ul">
+					<li>metting</li>
+					<li>讀書</li>
+					<li>打程式碼</li>
+					<li>看程式碼</li>
+					<li>看部落格</li>
+				</ul>
+			</form>
+			<div></div>
+
+			<script language="javascript">
+
+				function inputBox()
+				{
+
+					var str=prompt("您的備忘錄^-^","");
+
+					if(str!=null && str!="")
+					{
+						var ul = document.getElementById("ul");
+						var num = ul.childNodes.length;
+						add(1,str);
+						alert("^-^新增成功,您剛輸入的是:"+ str)
+					}
+
+
+				}
+
+				function add(n,str){
+
+					var ul = document.getElementById('ul');
+					var li = document.createElement("li");
+					var num = ul.childNodes.length;
+
+					li.innerHTML=str;
+
+					for(var i=0;i<num;i++){
+						if(n==-1){
+							ul.appendChild(li);
+						}else if(i==n-1){
+							ul.insertBefore(li,ul.childNodes[i]);
+						}
+					}
+
+				}
+
+			</script>
+		</section>
+	</body>
+</html>

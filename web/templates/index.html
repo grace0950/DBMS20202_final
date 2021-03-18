@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block page_content %}
+<head>
+	<style type="text/css">
+body{
+	font-family:  Georgia, serif;
+}	
+		.container{
+			margin:0px 0px;
+			padding: 0px;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		.about{
+
+			/*position: relative;*/
+			min-height:100%;
+			width: 100vw;
+			/*padding: 40px 0;*/
+			padding-bottom:100px;
+		}
+		.about.container{
+			margin: 0px,0px;
+		}
+		.about .wrap{
+			display: flex;
+		}
+		.about.item.container{
+			margin: 0px,0px;
+		}
+		.about .item{
+			/*margin: 0 10px;*/
+			/*width: 350px;*/
+			width: 20vw;
+			/*text-align: center;*/
+		}
+		.about .item h3{
+			color: #000;
+			transition: 0.5s;
+		}
+		.about .item p{
+			color: #000;
+			transition: 0.5s;
+		}
+		.about .item:hover h3{
+			color: #fa0;
+		}
+		.about .item:hover p{
+			color: #fa0;
+		}
+		.about .item img{
+			/* border-radius: 50%; */
+			width: 20vw;
+		}
+		input[type="image"]{
+			/*padding:15px 10px; */
+			width: 100%;
+			cursor:pointer;
+			/* -webkit-border-radius: 5px; */
+		}
+		.about >h2{
+			width: 100%;
+			font-size: 60px;
+			font-weight: 600;
+			line-height: 1;
+			letter-spacing: -1px;
+			/*margin: auto;*/
+			text-align: center;
+			padding: 0px 200px;
+		}
+		.about >p{
+			width: 660px;
+			margin: auto;
+			padding: 0 0 40px;
+			text-align: center;
+		}
+		.about >h3{
+			font-weight: 500;
+		}
+	</style>
+</head>
+
+
+<!-- <input type="image" src=""  alt="send" name="Test" id="Test"
+	onclick="send();" /> -->
+	<body>
+		<main>
+			<div class="about">
+				<h2>Welcome</h2>
+				<p>How's your day?
+				</p>
+				<div class="wrap">
+					<div class="item">
+						<a href="{{url_for('index_boring')}}">
+							<input type="image"  style = 'background-image' src="https://i.picsum.photos/id/124/400/600.jpg?hmac=-dypZAYRKCon_YkS3Wpqn6yjyr5hXJLb6vNojP67qiE" title = "boring" alt="send" name="Test" id="Test" onclick="send();" /> 
+					</div>
+						</a>
+						<div class="item">
+							<a href="{{url_for('index_angry')}}">
+								<input type="image"src="https://i.picsum.photos/id/1019/400/600.jpg?hmac=CCmq_lakGjWi8X6BOTVvw0zwyKOYsmxVLQpXvdPYWnQ" title = "angry" alt="send" name="Test" id="Test" onclick="send();" /> 
+						</div>
+							</a>
+							<div class="item">
+								<a href="{{url_for('index_excited')}}">
+									<input type="image" src="https://i.picsum.photos/id/1077/400/600.jpg?hmac=BLr8Bj2cFU_XqDsQ9ve0H0S8WP7DlAA-8w204hhcWqQ" title = "excited" alt="send" name="Test" id="Test" onclick="send();" /> 
+							</div>
+								</a>
+								<div class="item">
+									<a href="{{url_for('index_happy')}}">
+										<input type="image" src="https://i.picsum.photos/id/1003/400/600.jpg?hmac=GpsVsDNGCq3w7sURelNeXjnD9f28dhHqIl0siJLGioc" title = "happy"  alt="send" name="Test" id="Test" onclick="send();" /> 
+								</div>
+									</a>
+									<div class="item">
+										<a href="{{url_for('index_sad')}}">
+											<input type="image" src="https://i.picsum.photos/id/1062/400/600.jpg?hmac=WSoYbrz87fcwqgQW6Sg7GFUEvKoDW8U1tx9QKYY2g1I" title = "sad" alt="send" name="Test" id="Test" onclick="send();" /> 
+									</div>
+										</a>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			&copy; copyright by Unknown
+		</footer>
+	</body>
+
+	{% endblock %}

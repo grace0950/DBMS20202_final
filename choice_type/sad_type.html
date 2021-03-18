@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Sad{% endblock %}
+
+{% block page_content %}
+	<head>
+		<style type="text/css">
+		.about{
+			padding: 40px 0;
+			font-family: Comic sans MS;
+        }
+        .about .flex {
+            display: flex;
+            height: 300px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .about .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+            flex: 0%;
+        }
+
+        /*.about .wrap{
+            display: flex;
+        }
+        .about .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+        }*/
+        .about .item h3{
+            color: #000;
+            transition: 0.5s;
+            text-align: center;
+        }
+        .about .item p{
+            color: #000;
+            transition: 0.5s;
+        }
+        .about .item:hover h3{
+            color: #fa0;
+        }
+        .about .item:hover p{
+            color: #fa0;
+        }
+
+		input[type="image"]{
+			padding:15px 10px; 
+			width: 130px;
+			cursor:pointer;
+			/* -webkit-border-radius: 5px; */
+		}
+        .about >h2{
+            width: 100%;
+            font-size: 42px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .about >p{
+            width: 660px;
+            margin: auto;
+            padding: 0 0 40px;
+            text-align: center;
+        }
+        .about img{
+            width: 130px;
+        }
+		</style>
+	</head>
+
+
+	<!-- <input type="image" src=""  alt="send" name="Test" id="Test"
+onclick="send();" /> -->
+
+	<div class="about">
+		<img src="https://cdn.shopify.com/s/files/1/1061/1924/products/5_large.png?v=1571606116" style="display:block; margin:auto;" />
+		<h2>Sad</h2>
+		<div class="flex">
+			 <div class="item">
+				<input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Documentary.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                 <h3>Documentary</h3>
+
+			 </div>
+			 <div class="item">
+				<input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Drama.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+				 <h3>Drama</h3>
+			 </div>
+			 <div class="item">
+				<input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Action.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Action</h3>
+			</div>
+            <div class="item">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Animation.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Animation</h3>
+            </div>
+            <div class="item">
+                <input type="image" src="https://github.com/SabrinaKung/DBMS20202_final/blob/master/icon/Comedy.png?raw=true"  alt="send" name="Test" id="Test" onclick="send();" /> 
+                <h3>Comedy</h3>
+            </div>
+         </div>
+    </div>
+
+	
+{% endblock %}

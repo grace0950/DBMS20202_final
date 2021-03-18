@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Booking Page{% endblock title %}
+{% block content %}
+<div class="container">
+	<div class = 'about'>
+	<h1>Personal information</h1>
+    <h2>Welcome To My Movie Booking system</h2>
+	{{ wtf.quick_form(form) }}
+	</div>
+</div>
+	<script>
+
+		let type_select = document.getElementById('m_type');
+		let movie_select = document.getElementById('m_name')
+
+		type_select.onchange = function(){
+			ty_pe = type_select.value;
+
+			fetch('/movieType/'+ty_pe).then(function(response){
+				response.json().then(function(data){
+					let optionHTML = '';
+					for (let x of data.movie ){
+						optionHTML += '<option value="(&#39;' + x.name + '&#39;,)">' + x.name + '</option>';
+					}
+
+					movie_select.innerHTML = optionHTML;
+				});
+				
+			});
+		}
+
+	</script>
+{% endblock content%}
+

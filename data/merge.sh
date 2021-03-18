@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # parameters
-PWD=`pwd`
-MASTER=$PWD/$1
-TMP=$PWD/$1.tmp
-NEW=$PWD/$2
+MASTER=$1
+TMP=$1.tmp
+NEW=$2
 
 # detect parameters
 if [ -z "$2" ]; then
